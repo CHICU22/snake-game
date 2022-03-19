@@ -1,6 +1,6 @@
 var rows = 30;
 var columns = 30;
-
+console.log("ola");
 gridContainer = document.getElementById('gridContainer');
 for (let rowNumber = 0; rowNumber<rows; rowNumber++){
 
