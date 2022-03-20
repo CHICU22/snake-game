@@ -1,5 +1,6 @@
 let ultimoTempoRenderizado = 0;
-const velocidadeCobra = 2;
+const velocidadeCobra = 1;
+const gridContainer = document.getElementById('gridContainer');
 
 function main(tempoAtual){
     window.requestAnimationFrame(main);
@@ -9,12 +10,32 @@ function main(tempoAtual){
     } 
 
 
-
-    console.log("Render");
     ultimoTempoRenderizado = tempoAtual;
+
+    atualizarCobra();
+    drawSnake(gridContainer);
 }
 
 window.requestAnimationFrame(main);
+
+const corpoCobra = [
+    { x: 12, y: 12}
+] 
+
+function atualizarCobra(){
+    console.log("atualizar cobra");    
+}
+
+function drawSnake(gridContainer){
+    corpoCobra.forEach(segmento => {
+        const elementoCobra = document.createElement('div');
+        elementoCobra.style.gridRowStart = segmento.x;
+        elementoCobra.style.gridColumnStart = segmento.y;
+        elementoCobra.classList.add('cobra');
+        gridContainer.appendChild(elementoCobra);
+    })
+}
+
 
 
 
