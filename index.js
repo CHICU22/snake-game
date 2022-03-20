@@ -1,5 +1,20 @@
+let ultimoTempoRenderizado = 0;
+const velocidadeCobra = 2;
+
+function main(tempoAtual){
+    window.requestAnimationFrame(main);
+    const segundosDesdeUltimoRender = (tempoAtual - ultimoTempoRenderizado) / 1000;
+    if (segundosDesdeUltimoRender < 1 / velocidadeCobra){
+        return;
+    } 
 
 
+
+    console.log("Render");
+    ultimoTempoRenderizado = tempoAtual;
+}
+
+window.requestAnimationFrame(main);
 
 
 
