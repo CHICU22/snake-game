@@ -1,4 +1,4 @@
-let ultimoTempoRenderizado = 0;
+/*let ultimoTempoRenderizado = 0;
 const velocidadeCobra = 1;
 const gridContainer = document.getElementById('gridContainer');
 
@@ -14,44 +14,16 @@ function main(tempoAtual){
 
     atualizarCobra();
     drawSnake(gridContainer);
-}
+}*/
 
-window.requestAnimationFrame(main);
+/*window.requestAnimationFrame(main);*/
 
-const corpoCobra = [
-    { x: 12, y: 12}
-] 
+var rows = 34;
+var columns = 39;
 
-function atualizarCobra(){
-    console.log("atualizar cobra");    
-}
-
-function drawSnake(gridContainer){
-    corpoCobra.forEach(segmento => {
-        const elementoCobra = document.createElement('div');
-        elementoCobra.style.gridRowStart = segmento.x;
-        elementoCobra.style.gridColumnStart = segmento.y;
-        elementoCobra.classList.add('cobra');
-        gridContainer.appendChild(elementoCobra);
-    })
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/*var rows = 30;
-var columns = 30;
-console.log("ola");
 gridContainer = document.getElementById('gridContainer');
 for (let rowNumber = 0; rowNumber<rows; rowNumber++){
+
 
     var row = document.createElement('div');
     row.classList.add('row');
@@ -61,25 +33,35 @@ for (let rowNumber = 0; rowNumber<rows; rowNumber++){
         var gridItem = document.createElement('div');
         row.appendChild(gridItem);
         gridItem.classList.add('gridItem');
-        gridItem.id = (rowNumber) - (colNumber);
+        gridItem.id = `${rowNumber}-${colNumber}`;
     }
-}*/
+};
 
+const corpoCobra = [
+    { x: 12, y: 12}
+] 
 
-
-/*snakePosition = [
-    [2, 2],
-    [2, 3],
-    [2, 4],
-];
-
-function drawSnake(gridContainer){
-    snakePositions.forEach(snakePosition => {
-        const snake = document.createElement('div')
-        snake.style.gridRowStart = snakePosition.x
-        snake.style.gridColumnStart = snakePosition.y
-        snake.classList.add('snake');
-        gridContainer.appendChild(snake)
+function drawSnake(){
+    corpoCobra.forEach(segmento => {
+        const elementoCobra = document.getElementById(`${segmento.x}-${segmento.y}`);
+        console.log(elementoCobra);
+        elementoCobra.classList.add('cobra');
     })
-}  */
+}
+
+drawSnake();
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
