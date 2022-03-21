@@ -1,4 +1,4 @@
-.body {
+.tabela {
   display: flex;
   margin: 0;
   align-items: center;
@@ -9,14 +9,21 @@
 }
 
 #gridContainer{
-  background-color: blueviolet;
   width: 90vmin;
   height: 90vmin;
 }
 
 .cobra{
-  background-color: brown;
+  background-color: red;
   border: 2px;
+}
+
+.gridItem{
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+  border: 1px solid black;
+  display: inline-block;
 }
 
 /*# sourceMappingURL=index.css.map */
