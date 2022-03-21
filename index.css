@@ -1,3 +1,7 @@
+.row{
+  height: 20px;
+}
+
 .tabela {
   display: flex;
   margin: 0;
@@ -13,17 +17,20 @@
   height: 90vmin;
 }
 
-.cobra{
-  background-color: red;
-  border: 2px;
-}
-
 .gridItem{
   width: 20px;
   height: 20px;
   background-color: grey;
   border: 1px solid black;
   display: inline-block;
+}
+
+.cobra{
+  background-color: green;
+}
+
+.comida{
+  background-color: red;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -18,6 +18,8 @@ function main(tempoAtual){
 
 /*window.requestAnimationFrame(main);*/
 
+
+//Grid
 var rows = 34;
 var columns = 39;
 
@@ -37,11 +39,15 @@ for (let rowNumber = 0; rowNumber<rows; rowNumber++){
     }
 };
 
-const corpoCobra = [
-    { x: 12, y: 12}
+
+//Corpo Cobra
+let corpoCobra = [
+    { x: 12, y: 12}, 
+    { x: 12, y: 13},
+    { x: 12, y: 14}
 ] 
 
-function drawSnake(){
+function desenharCobra(){
     corpoCobra.forEach(segmento => {
         const elementoCobra = document.getElementById(`${segmento.x}-${segmento.y}`);
         console.log(elementoCobra);
@@ -49,8 +55,16 @@ function drawSnake(){
     })
 }
 
-drawSnake();
+desenharCobra();
 
+let comida = {x: 17, y: 17};
+
+function desenharComida(){
+        const elementoComida = document.getElementById(`${comida.x}-${comida.y}`);
+        elementoComida.classList.add('comida');
+}
+
+desenharComida();
 
 
 
