@@ -21,7 +21,7 @@ function main(tempoAtual){
 
 //Grid
 var rows = 34;
-var columns = 39;
+var columns = 34;
 
 gridContainer = document.getElementById('gridContainer');
 for (let rowNumber = 0; rowNumber<rows; rowNumber++){
