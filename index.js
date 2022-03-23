@@ -1,25 +1,3 @@
-/*let ultimoTempoRenderizado = 0;
-const velocidadeCobra = 1;
-const gridContainer = document.getElementById('gridContainer');
-
-function main(tempoAtual){
-    window.requestAnimationFrame(main);
-    const segundosDesdeUltimoRender = (tempoAtual - ultimoTempoRenderizado) / 1000;
-    if (segundosDesdeUltimoRender < 1 / velocidadeCobra){
-        return;
-    } 
-
-
-    ultimoTempoRenderizado = tempoAtual;
-
-    atualizarCobra();
-    drawSnake(gridContainer);
-}*/
-
-/*window.requestAnimationFrame(main);*/
-
-
-//Grid
 var rows = 34;
 var columns = 34;
 
@@ -65,6 +43,59 @@ function desenharComida(){
 }
 
 desenharComida();
+
+let dx;
+let dy;
+
+function movimentarCobra(){
+    const cabeca = {x: corpoCobra[0].x + dx, y: corpoCobra[0].y + dy} ;
+    corpoCobra.unshift(cabeca);
+    corpoCobra.pop();
+}
+
+movimentarCobra();
+
+function mudarDirecao(event) 
+{  
+   const LEFT_KEY = 37;
+   const RIGHT_KEY = 39;
+   const UP_KEY = 38;
+   const DOWN_KEY = 40;
+ 
+   const keyPressed = event.keyCode;
+   const cima = dy === -10;
+   const baixo = dy === 10;
+   const direita = dx === 10;  
+   const esquerda = dx === -10;
+ 
+     if (keyPressed === LEFT_KEY && !direita)
+     {    
+          dx = -10;
+          dy = 0;  
+     }
+ 
+     if (keyPressed === UP_KEY && !baixo)
+     {    
+          dx = 0;
+          dy = -10;
+     }
+ 
+     if (keyPressed === RIGHT_KEY && !esquerda)
+     {    
+          dx = 10;
+          dy = 0;
+     }
+ 
+     if (keyPressed === DOWN_KEY && !cima)
+     {    
+          dx = 0;
+          dy = 10;
+     }
+}
+
+mudarDirecao();
+
+document.addEventListener("keydown", mudarDirecao);
 
 
 
