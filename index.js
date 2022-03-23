@@ -27,35 +27,57 @@ let corpoCobra = [
 
 function desenharCobra(){
     corpoCobra.forEach(segmento => {
-        const elementoCobra = document.getElementById(`${segmento.x}-${segmento.y}`);
+        const elementoCobra = document.getElementById(`${segmento.y}-${segmento.x}`);
         console.log(elementoCobra);
         elementoCobra.classList.add('cobra');
     })
 }
 
 desenharCobra();
+//Corpo Cobra
 
+//Colocar Comida no Mapa
 let comida = {x: 17, y: 17};
 
 function desenharComida(){
-        const elementoComida = document.getElementById(`${comida.x}-${comida.y}`);
+        const elementoComida = document.getElementById(`${comida.y}-${comida.x}`);
         elementoComida.classList.add('comida');
 }
 
 desenharComida();
+//Colocar Comida no Mapa
 
-let dx;
-let dy;
-
-function movimentarCobra(){
-    const cabeca = {x: corpoCobra[0].x + dx, y: corpoCobra[0].y + dy} ;
-    corpoCobra.unshift(cabeca);
-    corpoCobra.pop();
+//Remover o que fica para trás
+/*function limparGrid(){
+    elementoCobra.classList.remove('cobra');
+    elementoComida.classList.remove('comida');
 }
 
-movimentarCobra();
+limparGrid();*/
+//Remover o que fica para trás
 
-function mudarDirecao(event) 
+//Fazer a cobra movimentar de 1 em 1 segundos
+let dx = +1;
+let dy = -1;
+
+function movimentarCobra(){
+    const cabeca = {x: corpoCobra[0].x + dx, y: corpoCobra[0].y} ;
+    console.log("------");
+    console.log(cabeca);
+    console.log(corpoCobra);
+    corpoCobra.unshift(cabeca);
+    corpoCobra.pop();
+    console.log(corpoCobra);
+}
+
+setInterval(()=>{
+    movimentarCobra();
+    desenharCobra();
+    desenharComida();
+}, 1000);
+//Fazer a cobra movimentar de 1 em 1 segundos
+
+/*function mudarDirecao(event) 
 {  
    const LEFT_KEY = 37;
    const RIGHT_KEY = 39;
@@ -95,7 +117,7 @@ function mudarDirecao(event)
 
 mudarDirecao();
 
-document.addEventListener("keydown", mudarDirecao);
+document.addEventListener("keydown", mudarDirecao);*/
 
 
 
