@@ -47,15 +47,6 @@ function desenharComida(){
 desenharComida();
 //Colocar Comida no Mapa
 
-//Remover o que fica para trás
-/*function limparGrid(){
-    elementoCobra.classList.remove('cobra');
-    elementoComida.classList.remove('comida');
-}
-
-limparGrid();*/
-//Remover o que fica para trás
-
 //Fazer a cobra movimentar de 1 em 1 segundos
 let dx = +1;
 let dy = -1;
@@ -75,50 +66,61 @@ setInterval(()=>{
     desenharCobra();
     desenharComida();
 }, 1000);
-//Fazer a cobra movimentar de 1 em 1 segundos
 
-/*function mudarDirecao(event) 
-{  
-   const LEFT_KEY = 37;
-   const RIGHT_KEY = 39;
-   const UP_KEY = 38;
-   const DOWN_KEY = 40;
- 
-   const keyPressed = event.keyCode;
-   const cima = dy === -10;
-   const baixo = dy === 10;
-   const direita = dx === 10;  
-   const esquerda = dx === -10;
- 
-     if (keyPressed === LEFT_KEY && !direita)
-     {    
-          dx = -10;
-          dy = 0;  
-     }
- 
-     if (keyPressed === UP_KEY && !baixo)
-     {    
-          dx = 0;
-          dy = -10;
-     }
- 
-     if (keyPressed === RIGHT_KEY && !esquerda)
-     {    
-          dx = 10;
-          dy = 0;
-     }
- 
-     if (keyPressed === DOWN_KEY && !cima)
-     {    
-          dx = 0;
-          dy = 10;
-     }
+
+function limparGrid(){
+    elementoCobra.classList.remove('cobra');
+    elementoComida.classList.remove('comida');
 }
 
-mudarDirecao();
+limparGrid();
 
-document.addEventListener("keydown", mudarDirecao);*/
+function baterParede(cobra) {
+    // If you bump into yourself 
+    for (let i = 1; i < corpoCobra.length; i++) {
+        if(cobra[i].x === cobra[0].x && cobra[i].y === cobra[0].y){
+            return true;
+        }
+    }
+    // If you bump into the wall
+    if(cobra[0].x >= 18 || cobra[0].x <=0 || cobra[0].y >= 18 || cobra[0].y <=0){
+        return true;
+    }
+}
 
+let inputDir = {x: 0, y: 0}; 
+
+window.requestAnimationFrame(main);
+window.addEventListener('keydown', e =>{
+    inputDir = {x: 0, y: 1} // Start the game
+    switch (e.key) {
+        case "ArrowUp":
+            console.log("ArrowUp");
+            inputDir.x = 0;
+            inputDir.y = -1;
+            break;
+
+        case "ArrowDown":
+            console.log("ArrowDown");
+            inputDir.x = 0;
+            inputDir.y = 1;
+            break;
+
+        case "ArrowLeft":
+            console.log("ArrowLeft");
+            inputDir.x = -1;
+            inputDir.y = 0;
+            break;
+
+        case "ArrowRight":
+            console.log("ArrowRight");
+            inputDir.x = 1;
+            inputDir.y = 0;
+            break;
+        default:
+            break;
+    }
+});
 
 
 
