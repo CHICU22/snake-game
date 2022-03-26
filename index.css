@@ -33,4 +33,65 @@
   background-color: red;
 }
 
+
+/*Start Menu*/
+form { 
+  max-width:420px; 
+  margin:50px auto;
+  padding: 180px;
+}
+
+.cor1{
+  color:black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 20px;
+}
+
+.cor2{
+  margin-left: auto;
+}
+
+
+.cor1-input, .cor2-input {
+  color:black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #CC6666;
+  transition: all 0.3s;
+  margin-bottom: 15px;
+  width:50%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.cor1-input:focus, .cor2-input:focus { 
+  border:2px solid #CC4949; 
+}
+
+#submit {
+  display:flex;
+  justify-content: center;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#CC6666;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:black;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+
+#submit:hover { 
+  background:#CC4949; 
+}
 /*# sourceMappingURL=index.css.map */
