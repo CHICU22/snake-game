@@ -66,23 +66,25 @@ setInterval(()=>{
     desenharCobra();
     desenharComida();
 }, 1000);
+//Fazer a cobra movimentar de 1 em 1 segundos
 
-
+//Limpar o que fica para trás
 function limparGrid(){
     elementoCobra.classList.remove('cobra');
     elementoComida.classList.remove('comida');
 }
 
 limparGrid();
+//Limpar o que fica para trás
 
 function baterParede(cobra) {
-    // If you bump into yourself 
+    // Se bateres em ti próprio 
     for (let i = 1; i < corpoCobra.length; i++) {
         if(cobra[i].x === cobra[0].x && cobra[i].y === cobra[0].y){
             return true;
         }
     }
-    // If you bump into the wall
+    // se bateres na parede
     if(cobra[0].x >= 18 || cobra[0].x <=0 || cobra[0].y >= 18 || cobra[0].y <=0){
         return true;
     }
