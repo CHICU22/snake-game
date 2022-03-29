@@ -1,3 +1,10 @@
+// //Código butão
+// submit.onclick = () => {
+//     gridContainer.style.backgroundColor = cobra.value;
+//     gridContainer.style.backgroundColor = comida.value;
+// }
+// //Código butão
+
 var rows = 34;
 var columns = 34;
 
@@ -69,22 +76,24 @@ setInterval(()=>{
 //Fazer a cobra movimentar de 1 em 1 segundos
 
 //Limpar o que fica para trás
-function limparGrid(){
-    elementoCobra.classList.remove('cobra');
-    elementoComida.classList.remove('comida');
-}
+// function limparGrid(){
+//     if(movimentarCobra = true){    
+//         elementoCobra.classList.remove('cobra');
+//         elementoComida.classList.remove('comida');
+//     }
+// }
 
-limparGrid();
+// limparGrid();
 //Limpar o que fica para trás
 
 function baterParede(cobra) {
-    // Se bateres em ti próprio 
+//Se bateres em ti próprio 
     for (let i = 1; i < corpoCobra.length; i++) {
         if(cobra[i].x === cobra[0].x && cobra[i].y === cobra[0].y){
             return true;
         }
-    }
-    // se bateres na parede
+     }
+     // se bateres na parede
     if(cobra[0].x >= 18 || cobra[0].x <=0 || cobra[0].y >= 18 || cobra[0].y <=0){
         return true;
     }
@@ -109,7 +118,7 @@ window.addEventListener('keydown', e =>{
             break;
 
         case "ArrowLeft":
-            console.log("ArrowLeft");
+             console.log("ArrowLeft");
             inputDir.x = -1;
             inputDir.y = 0;
             break;
