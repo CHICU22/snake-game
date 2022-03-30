@@ -76,12 +76,12 @@ setInterval(()=>{
 //Fazer a cobra movimentar de 1 em 1 segundos
 
 //Limpar o que fica para trás
-// function limparGrid(){
-//     if(movimentarCobra = true){    
-//         elementoCobra.classList.remove('cobra');
-//         elementoComida.classList.remove('comida');
-//     }
-// }
+function limparGrid(){
+    if(movimentarCobra = true){    
+        elementoCobra.classList.remove('cobra');
+        elementoComida.classList.remove('comida');
+    }
+}
 
 // limparGrid();
 //Limpar o que fica para trás
@@ -100,6 +100,14 @@ function baterParede(cobra) {
 }
 
 let inputDir = {x: 0, y: 0}; 
+
+
+Keyboard.Keymap = {
+    37: 'ArrowLeft',
+    38: 'ArrowUp',
+    39: 'ArrowRight',
+    40: 'ArrowDown'
+  };
 
 window.requestAnimationFrame(main);
 window.addEventListener('keydown', e =>{
