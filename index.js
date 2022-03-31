@@ -55,8 +55,9 @@ desenharComida();
 //Colocar Comida no Mapa
 
 //Fazer a cobra movimentar de 1 em 1 segundos
-let dx = +1;
-let dy = -1;
+// let dx = +1;
+// let dy = -1;
+inputDir = {x: 0, y: -1}; 
 
 function movimentarCobra(){
     const cabeca = {x: corpoCobra[0].x + dx, y: corpoCobra[0].y} ;
@@ -76,10 +77,14 @@ setInterval(()=>{
 //Fazer a cobra movimentar de 1 em 1 segundos
 
 //Limpar o que fica para trás
-function limparGrid(){
-    if(movimentarCobra = true){    
-        elementoCobra.classList.remove('cobra');
-        elementoComida.classList.remove('comida');
+function limparGrid(){    
+        for (let colNumber = 0; colNumber < columns; colNumber++){
+        var gridItem = document.createElement('div');
+        row.appendChild(gridItem);
+        gridItem.classList.add('gridItem');
+        gridItem.id = `${rowNumber}-${colNumber}`;
+        gridItem.classList.remove('cobra');
+        gridItem.classList.remove('comida');
     }
 }
 
@@ -106,32 +111,35 @@ Keyboard.Keymap = {
     37: 'ArrowLeft',
     38: 'ArrowUp',
     39: 'ArrowRight',
-    40: 'ArrowDown'
+    40: 'ArrowDown',
+    87: "W",
+    83: "S",
+    65: "A",
+    68: "D"
   };
 
-window.requestAnimationFrame(main);
 window.addEventListener('keydown', e =>{
     inputDir = {x: 0, y: 1} // Start the game
     switch (e.key) {
-        case "ArrowUp":
+        case "ArrowUp" || "W":
             console.log("ArrowUp");
             inputDir.x = 0;
             inputDir.y = -1;
             break;
 
-        case "ArrowDown":
+        case "ArrowDown" || "S":
             console.log("ArrowDown");
             inputDir.x = 0;
             inputDir.y = 1;
             break;
 
-        case "ArrowLeft":
+        case "ArrowLeft" || "A":
              console.log("ArrowLeft");
             inputDir.x = -1;
             inputDir.y = 0;
             break;
 
-        case "ArrowRight":
+        case "ArrowRight" || "D":
             console.log("ArrowRight");
             inputDir.x = 1;
             inputDir.y = 0;
