@@ -91,6 +91,12 @@ function limparGrid(){
 // limparGrid();
 //Limpar o que fica para trás
 
+let randomFood;
+function getRandomFood{
+    if(cobra )
+}
+
+
 function baterParede(cobra) {
 //Se bateres em ti próprio 
     for (let i = 1; i < corpoCobra.length; i++) {
